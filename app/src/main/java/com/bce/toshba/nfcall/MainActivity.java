@@ -1,5 +1,6 @@
 package com.bce.toshba.nfcall;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,6 +8,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toolbar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +29,7 @@ public class MainActivity extends Activity {
         }
 
 
-        final ListView listNFC = (ListView) findViewById(R.id.listNFC);
+        ListView listNFC = (ListView) findViewById(R.id.listNFC);
         CustomAdapter adapter = new CustomAdapter(this, list);
         listNFC.setAdapter(adapter);
     }
