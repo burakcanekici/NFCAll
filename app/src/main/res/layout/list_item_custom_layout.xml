@@ -2,22 +2,31 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:background="@drawable/custom_item_shape"
+    android:weightSum="5">
 
-    <TextView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:text="BE"/>
-    <!--
-    <ImageView
-        android:id="@+id/beImageView"
-        android:layout_width="50dp"
-        android:layout_height="50dp" />
-    -->
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/beImageView"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/nfcicon"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_weight="3"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
 
         <TextView
             android:id="@+id/beTextViewKey"
@@ -30,6 +39,32 @@
             android:textColor="@android:color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:background="@null"
+            android:src="@drawable/selecticon"
+            android:id="@+id/lvItemSelect"/>
+
+        <ImageButton
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:background="@null"
+            android:src="@drawable/trashicon"
+            android:id="@+id/lvItemDelete"/>
 
     </LinearLayout>
 
