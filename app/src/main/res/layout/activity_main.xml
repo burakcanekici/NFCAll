@@ -7,6 +7,11 @@
     android:background="@drawable/desktop"
     tools:context=".MainActivity">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/nfcTag1"/>
+
     <ListView
         android:id="@+id/listNFC"
         android:layout_width="match_parent"

@@ -12,12 +12,12 @@
         android:layout_height="match_parent"
         android:gravity="center">
 
-        <ImageView
-            android:id="@+id/beImageView"
+        <ImageButton
+            android:id="@+id/beActivateButton"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:layout_margin="10dp"
-            android:src="@drawable/nfcicon"/>
+            android:src="@drawable/nfciconpassive"
+            android:background="@null"/>
 
     </LinearLayout>
 
@@ -38,7 +38,7 @@
             android:id="@+id/beTextViewValue"
             android:textColor="@android:color/black"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"/>
 
     </LinearLayout>
 
@@ -50,13 +50,6 @@
         android:gravity="center"
         android:layout_marginBottom="10dp"
         android:layout_marginTop="10dp">
-
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:background="@null"
-            android:src="@drawable/selecticon"
-            android:id="@+id/lvItemSelect"/>
 
         <ImageButton
             android:layout_marginTop="10dp"
