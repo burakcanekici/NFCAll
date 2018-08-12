@@ -2,6 +2,7 @@ package com.bce.toshba.nfcall;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Typeface;
 import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,10 +17,12 @@ import java.util.List;
 public class CustomAdapter extends BaseAdapter {
     private LayoutInflater li;
     private List<NFCItem> NFCList;
+    private Typeface tfProximaNova;
 
-    public CustomAdapter(Activity activity, List<NFCItem> pNFCList){
+    public CustomAdapter(Activity activity, List<NFCItem> pNFCList, Typeface tfProximaNova){
         li = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         this.NFCList = pNFCList;
+        this.tfProximaNova = tfProximaNova;
     }
 
     @Override
@@ -39,21 +42,15 @@ public class CustomAdapter extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
         View lineView;
         lineView = li.inflate(R.layout.list_item_custom_layout, null);
+
         final TextView tvKey = (TextView) lineView.findViewById(R.id.beTextViewKey);
         TextView tvValue = (TextView) lineView.findViewById(R.id.beTextViewValue);
-        ImageButton ibSelect = (ImageButton) lineView.findViewById(R.id.lvItemSelect);
         ImageButton ibDelete = (ImageButton) lineView.findViewById(R.id.lvItemDelete);
 
         NFCItem ni = NFCList.get(i);
         tvKey.setText(ni.getKey());
         tvValue.setText(ni.getValue());
-
-        ibSelect.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(li.getContext(), tvKey.getText() + " has been activated!", Toast.LENGTH_LONG).show();
-            }
-        });
+        tvValue.setTypeface(tfProximaNova);
 
         ibDelete.setOnClickListener(new View.OnClickListener() {
             @Override
